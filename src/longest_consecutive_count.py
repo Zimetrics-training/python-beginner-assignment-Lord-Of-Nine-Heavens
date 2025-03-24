@@ -9,5 +9,23 @@ since the longest consecutive elements sequence is [1, 2, 3, 4].
 Look for difference of 1 between two consecutive numbers.
 """
 def longest_consecutive(nums):
-    # Implement your method here    
+    
+    if not nums:
+        return 0
+
+    longest_streak = 1
+    currstreak = 1
+    nums.sort()
+
+    for i, v in enumerate(nums[1:], start=1):
+        if v == nums[i - 1]:  
+            currstreak = 1
+
+        elif v == nums[i - 1] + 1:
+            currstreak += 1
+        else:
+            currstreak = 1
+
+        longest_streak = max(longest_streak, currstreak)
+
     return longest_streak

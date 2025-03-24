@@ -23,7 +23,7 @@ def reformat_and_sort(s: str) -> str:
     words.reverse()
 
     # Step 4: Capitalize the first letter of each word
-    words = [word.capitalize() for word in words]
+    words = [word.title() for word in words]
 
     # Step 5: Sort the words alphabetically
     words.sort()

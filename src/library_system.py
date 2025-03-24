@@ -23,26 +23,34 @@ import datetime
 
 class Book:
     def __init__(self, title: str, author: str, year_of_publication: int, status: str = "available"):
-        # Initialize the book with title, author, year_of_publication, and status
-        pass
+        """Initialize the book with title, author, year_of_publication, and status"""
+        self.title = title
+        self.author = author
+        self.year_of_publication = year_of_publication
+        self.status = status
 
     def checkout(self) -> None:
-        # Mark the book as checked out, raise an exception if already checked out
-        pass
+        """Mark the book as checked out, raise an exception if already checked out"""
+        if self.status == "checked out":
+            raise ValueError()
+        self.status = "checked out"
 
     def checkin(self) -> None:
-        # Mark the book as available, raise an exception if already available
-        pass
+        """Mark the book as available, raise an exception if already available"""
+        if self.status == "available":
+            raise ValueError()
+        self.status = "available"
 
     def get_info(self) -> str:
-        # Return the book's title, author, year_of_publication, and status as a formatted string
-        pass
+        """Return the book's title, author, year_of_publication, and status as a formatted string"""
+        return f"{self.title} by {self.author} (Published: {self.year_of_publication}) - {self.status}"
 
     def is_checked_out(self) -> bool:
-        # Return True if the book is checked out, else False
-        pass
+        """Return True if the book is checked out, else False"""
+        return self.status == "checked out"
 
     @staticmethod
     def book_age(year_of_publication: int) -> int:
-        # Return the age of the book based on the current year
-        pass
+        """Return the age of the book based on the current year"""
+        age = datetime.datetime.now().year - year_of_publication
+        return age

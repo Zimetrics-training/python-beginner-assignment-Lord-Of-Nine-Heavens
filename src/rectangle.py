@@ -11,17 +11,18 @@ Create a Rectangle class that has the following methods:
 # rectangle.py
 class Rectangle:
     def __init__(self, width, height):
-        # Initialize the rectangle with width and height
-        pass
+        """Initialize the rectangle with width and height"""
+        self.width = width
+        self.height = height
 
     def area(self):
-        # Return the area of the rectangle
-        pass
+        """Return the area of the rectangle"""
+        return self.width * self.height
 
     def perimeter(self):
-        # Return the perimeter of the rectangle
-        pass
+        """Return the perimeter of the rectangle"""
+        return 2 * (self.width + self.height)
 
     def is_square(self):
-        # Return True if the rectangle is a square, otherwise False
-        pass
+        """Return True if the rectangle is a square, otherwise False"""
+        return self.width == self.height
